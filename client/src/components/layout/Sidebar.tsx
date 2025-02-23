@@ -23,7 +23,7 @@ export default function Sidebar() {
     <>
       <Button
         variant="ghost"
-        className="fixed top-4 left-4 z-50 md:hidden"
+        className="fixed top-4 left-4 z-50 md:hidden text-white"
         onClick={toggleMobile}
       >
         {isMobileOpen ? <X /> : <Menu />}
@@ -31,7 +31,7 @@ export default function Sidebar() {
 
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-40 flex flex-col bg-sidebar border-r border-sidebar-border transition-all duration-300 ease-in-out",
+          "fixed inset-y-0 left-0 z-40 flex flex-col bg-black border-r border-gray-800 transition-all duration-300 ease-in-out",
           expanded ? "w-64" : "w-20",
           isMobileOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         )}
@@ -39,13 +39,13 @@ export default function Sidebar() {
         <div className="flex items-center justify-between p-4">
           <Link href="/">
             <div className={cn("transition-all", expanded ? "block" : "hidden")}>
-              <h1 className="font-semibold text-xl text-sidebar-foreground">TURTLE</h1>
+              <h1 className="font-semibold text-xl text-white">TURTLE</h1>
             </div>
           </Link>
           <Button
             variant="ghost"
             size="icon"
-            className="hidden md:flex"
+            className="hidden md:flex text-white hover:bg-gray-800"
             onClick={toggleSidebar}
           >
             {expanded ? <X size={20} /> : <Menu size={20} />}
@@ -53,7 +53,7 @@ export default function Sidebar() {
         </div>
 
         <Profile expanded={expanded} />
-        
+
         <ScrollArea className="flex-1 px-4">
           <ProjectList expanded={expanded} />
         </ScrollArea>

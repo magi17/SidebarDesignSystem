@@ -40,9 +40,9 @@ export default function ProjectList({ expanded }: ProjectListProps) {
             <Link 
               key={item.path}
               href={item.path}
-              className="flex items-center justify-center h-10 w-10 rounded-md hover:bg-sidebar-accent transition-colors"
+              className="flex items-center justify-center h-10 w-10 rounded-md hover:bg-gray-800 transition-colors"
             >
-              <span className="w-4 h-4 bg-sidebar-accent rounded-full" />
+              <span className="w-4 h-4 bg-gray-700 rounded-full" />
             </Link>
           ))
         )}
@@ -53,8 +53,8 @@ export default function ProjectList({ expanded }: ProjectListProps) {
   return (
     <Accordion type="single" collapsible className="w-full">
       {projects.map((category, idx) => (
-        <AccordionItem key={idx} value={`item-${idx}`}>
-          <AccordionTrigger className="text-sidebar-foreground hover:text-sidebar-foreground/80">
+        <AccordionItem key={idx} value={`item-${idx}`} className="border-gray-800">
+          <AccordionTrigger className="text-white hover:text-gray-300">
             {category.name}
           </AccordionTrigger>
           <AccordionContent>
@@ -64,8 +64,8 @@ export default function ProjectList({ expanded }: ProjectListProps) {
                   key={itemIdx}
                   href={item.path}
                   className={cn(
-                    "px-4 py-2 rounded-md text-sidebar-foreground/60",
-                    "hover:text-sidebar-foreground hover:bg-sidebar-accent/50",
+                    "px-4 py-2 rounded-md text-gray-400",
+                    "hover:text-white hover:bg-gray-800",
                     "transition-colors"
                   )}
                 >
