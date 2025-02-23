@@ -3,7 +3,8 @@ import { Mistral } from "@mistralai/mistralai";
 
 const router = Router();
 
-const apiKey = "cixQtTuj5ql7j0mf25m79mk75n6jdPoU";
+// For Vercel deployment, check for environment variable first
+const apiKey = process.env.MISTRAL_API_KEY || "cixQtTuj5ql7j0mf25m79mk75n6jdPoU";
 if (!apiKey) {
   throw new Error("Missing MISTRAL_API_KEY");
 }
@@ -25,7 +26,7 @@ router.get("/", async (req, res) => {
       messages: [{ role: "user", content: message }],
     });
 
-    const botResponse = chatResponse.choices[0]?.message.content || "No response received";
+    const botResponse = chatResponse.choices?.[0]?.message.content || "No response received";
     res.status(200).json({ response: botResponse });
   } catch (error: any) {
     console.error("Error:", error);
