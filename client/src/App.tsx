@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import GeminiPage from "@/pages/gemini";
+import HelloPage from "@/pages/hello";
 import Sidebar from "@/components/layout/Sidebar";
 
 function Router() {
@@ -15,6 +16,7 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/api/gemini" component={GeminiPage} />
+          <Route path="/api/hello" component={HelloPage} />
           <Route component={NotFound} />
         </Switch>
       </main>
