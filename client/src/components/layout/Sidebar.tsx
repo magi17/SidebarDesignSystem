@@ -23,7 +23,7 @@ export default function Sidebar() {
     <>
       <Button
         variant="ghost"
-        className="fixed top-4 left-4 z-50 md:hidden text-white"
+        className="fixed top-4 left-4 z-50 md:hidden text-white hover:bg-gray-800"
         onClick={toggleMobile}
       >
         {isMobileOpen ? <X /> : <Menu />}
@@ -36,10 +36,10 @@ export default function Sidebar() {
           isMobileOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         )}
       >
-        <div className="flex items-center justify-between p-4">
+        <div className="flex items-center justify-between p-6">
           <Link href="/">
             <div className={cn("transition-all", expanded ? "block" : "hidden")}>
-              <h1 className="font-semibold text-xl text-white">TURTLE</h1>
+              <h1 className="font-bold text-2xl text-white tracking-wider">TURTLE</h1>
             </div>
           </Link>
           <Button
@@ -58,6 +58,14 @@ export default function Sidebar() {
           <ProjectList expanded={expanded} />
         </ScrollArea>
       </aside>
+
+      {/* Overlay for mobile */}
+      {isMobileOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+          onClick={toggleMobile}
+        />
+      )}
     </>
   );
 }

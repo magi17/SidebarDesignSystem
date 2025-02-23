@@ -8,9 +8,9 @@ import Sidebar from "@/components/layout/Sidebar";
 
 function Router() {
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex min-h-screen bg-black">
       <Sidebar />
-      <main className="flex-1 p-6">
+      <main className="flex-1 md:ml-20 lg:ml-64 p-4 md:p-6 lg:p-8">
         <Switch>
           <Route path="/" component={Home} />
           <Route component={NotFound} />
