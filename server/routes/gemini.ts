@@ -9,7 +9,8 @@ const apiKeys = [
   "AIzaSyD5CCNspQlYuqIR2t1BggzEFG0jmTThino"
 ];
 
-const API_KEY = apiKeys[Math.floor(Math.random() * apiKeys.length)];
+// For Vercel deployment, ensure we have an API key
+const API_KEY = process.env.GEMINI_API_KEY || apiKeys[Math.floor(Math.random() * apiKeys.length)];
 
 if (!API_KEY) {
   throw new Error("API_KEY is not set.");
@@ -48,7 +49,6 @@ router.get("/", async (req, res) => {
 
       result = await model.generateContent([ask, image]);
     } else {
-      // If imagurl is not provided, only use the text input (ask)
       result = await model.generateContent(ask);
     }
 
