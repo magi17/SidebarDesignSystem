@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import GeminiPage from "@/pages/gemini";
 import HelloPage from "@/pages/hello";
+import MistralPage from "@/pages/mistral";
 import Sidebar from "@/components/layout/Sidebar";
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/api/gemini" component={GeminiPage} />
           <Route path="/api/hello" component={HelloPage} />
+          <Route path="/api/mistral" component={MistralPage} />
           <Route component={NotFound} />
         </Switch>
       </main>

@@ -18,7 +18,7 @@ export default function ProjectList({ expanded }: ProjectListProps) {
       items: [
         { name: "Gpt4o", path: "/gpt4o" },
         { name: "llama", path: "/llama" },
-        { name: "Gemini 1.5 vision", path: "/gemini-vision" },
+        { name: "Gemini 1.5 vision", path: "/api/gemini?ask=hi" },
         { name: "Gemini-2.0-pro-exp-02-0", path: "/gemini-pro" },
         { name: "Mistral", path: "/mistral" },
       ]
